@@ -7,6 +7,16 @@
   <version>1.0-SNAPSHOT</version>
   <name>project5ex Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+  <properties>
+<!--    <maven.compiler.release>8</maven.compiler.release>-->
+
+    <java-version>1.6</java-version>
+    <org.springframework-version>4.2.4.RELEASE</org.springframework-version>
+    <org.aspectj-version>1.6.10</org.aspectj-version>
+    <org.slf4j-version>1.6.6</org.slf4j-version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -36,18 +46,43 @@
       <version>8.0.28</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.5.11</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>project5ex</finalName>
     <plugins>
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-compiler-plugin</artifactId>-->
+<!--        <version>3.8.0</version>-->
+<!--        <configuration>-->
+<!--      <release>8</release>-->
+<!--        </configuration>-->
+<!--      </plugin>-->
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>
         <configuration>
-          <release>1.8</release>
+          <source>1.8</source>
+          <target>1.8</target>
+          <verbose>true</verbose>
+<!--          <release>${maven.compiler.release}</release>-->
         </configuration>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
